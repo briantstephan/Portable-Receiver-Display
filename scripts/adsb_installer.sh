@@ -95,7 +95,7 @@ echo -e "\033[37m"
 
 # Get new PRDS from Github:
 cd /home/pi
-git clone --depth 1 --no-checkout https://github.com/JN-Husch/Portable-Receiver-Display.git temp
+git clone --depth 1 --no-checkout https://github.com/briantstephan/Portable-Receiver-Display.git temp
 sudo mv temp/.git PRDS/.git
 sudo rm -rf temp
 cd PRDS

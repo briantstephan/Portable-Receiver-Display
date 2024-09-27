@@ -69,7 +69,7 @@ Recommended: Raspberry Pi OS Lite (64-bit)
 
 5. Run the automatic installation script by running the following command:
 
-   		sudo bash -c "$(wget -O - https://raw.githubusercontent.com/JN-Husch/Portable-Receiver-Display/main/scripts/adsb_installer.sh)"
+   		sudo bash -c "$(wget -O - https://raw.githubusercontent.com/briantstephan/Portable-Receiver-Display/main/scripts/adsb_installer.sh)"
  
 <br/>
 
@@ -96,7 +96,7 @@ To update the PRD Software, follow these steps:
 
 2. Run the following command:
 
-   		sudo bash -c "$(wget -O - https://raw.githubusercontent.com/JN-Husch/Portable-Receiver-Display/main/scripts/adsb_installer.sh)"
+   		sudo bash -c "$(wget -O - https://raw.githubusercontent.com/briantstephan/Portable-Receiver-Display/main/scripts/adsb_installer.sh)"
 
 <br/>
 <br/>

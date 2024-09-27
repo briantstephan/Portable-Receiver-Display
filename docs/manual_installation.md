@@ -51,7 +51,7 @@ Installation into a virtual environment recommended - Guide is not up to date. U
 4. Copy the contents of the ADSB folder to your Pi, by running the following 6 commands:
 
 		cd /home/pi
-		git clone --depth 1 --no-checkout https://github.com/JN-Husch/Portable-Receiver-Display.git PRDS
+		git clone --depth 1 --no-checkout https://github.com/briantstephan/Portable-Receiver-Display.git PRDS
 		cd PRDS
 		git sparse-checkout set ADSB
 		git checkout
