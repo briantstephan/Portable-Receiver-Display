@@ -33,9 +33,9 @@ delay_data = 1                                  # Refresh rate for data in secon
 
 # Home Position (used if there is no GPS module or no GPS Signal)
 home_pos = Classes.Position3D()
-home_pos.lat = 0                    # Home Latitude
-home_pos.lng = 0                    # Home Longitude
-home_pos.alt = 0                    # Home Altitude in m
+home_pos.lat = os.environ.get("HOME_LATITUDE", 0)         # Home Latitude
+home_pos.lng = os.environ.get("HOME_LONGITUDE", 0)        # Home Longitude
+home_pos.alt = os.environ.get("HOME_ALTITUDE", 0)         # Home Altitude in m
 
 use_gps = True                      # Variable if a GPS receiver is available
 
