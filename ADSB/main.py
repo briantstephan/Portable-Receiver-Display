@@ -49,7 +49,7 @@ try:
     config = ConfigParser()
     config.read('/home/pi/adsb_config.cfg')
     home_pos.lat = eval(config.get("location", "latitude"))         # Home Latitude
-    home_pos.lng = evalconfig.get("location", "longitude"))        # Home Longitude
+    home_pos.lng = eval(config.get("location", "longitude"))        # Home Longitude
     home_pos.alt = eval(config.get("location", "altitude"))         # Home Altitude in m
 except:
     home_pos.lat = 0
