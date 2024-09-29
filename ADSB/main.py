@@ -18,9 +18,9 @@ import json
 
 from dateutil import parser
 from datetime import datetime, timedelta
+from configparser import ConfigParser
 from PIL import Image,ImageDraw,ImageFont
 from waveshare_epd import epd2in9_V2
-
 
 ####################################################################################
 #
@@ -30,13 +30,6 @@ from waveshare_epd import epd2in9_V2
 
 url = "http://127.0.0.1/tar1090/data/aircraft.json" # Path to aircraft.json
 delay_data = 1                                  # Refresh rate for data in seconds
-
-# Home Position (used if there is no GPS module or no GPS Signal)
-home_pos = Classes.Position3D()
-home_pos.lat = os.environ.get("HOME_LATITUDE", 0)         # Home Latitude
-home_pos.lng = os.environ.get("HOME_LONGITUDE", 0)        # Home Longitude
-home_pos.alt = os.environ.get("HOME_ALTITUDE", 0)         # Home Altitude in m
-
 use_gps = True                      # Variable if a GPS receiver is available
 
 ####################################################################################
@@ -50,6 +43,18 @@ page_no = 0                         # Active Page Number
 page_max = 4                        # Total Count of available Pages (starting at 0)
 page_timer = 0                      # Variable for return to page 0 function
 
+# Home Position (used if there is no GPS module or no GPS Signal)
+home_pos = Classes.Position3D()
+try:
+    config = ConfigParser()
+    config.read('/home/pi/adsb_config.cfg')
+    home_pos.lat = eval(config.get("location", "latitude"))         # Home Latitude
+    home_pos.lng = evalconfig.get("location", "longitude"))        # Home Longitude
+    home_pos.alt = eval(config.get("location", "altitude"))         # Home Altitude in m
+except:
+    home_pos.lat = 0
+    home_pos.lng = 0
+    home_pos.alt = 0
 
 # Receiver Position
 rec_pos = Classes.Position3D()
